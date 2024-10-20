@@ -1,11 +1,7 @@
 import numpy as np
 import cv2 as cv
-from matplotlib import pyplot as plt
 import os 
-from icecream import ic
-
 from PIL import Image
-plt.style.use('seaborn')
 
 
 def denoise_img(input_path, output_path, h=10):
@@ -17,12 +13,13 @@ def denoise_img(input_path, output_path, h=10):
 split_dirs = ['../../test1_images', '../../train_images', '../../val_images']
 
 for h in [20, 25, 30]:
-    ic(h)
+    print(h)
     for split in split_dirs:
-        ic(split)
+        # ic(split)
+        print(split)
         img_dir = os.listdir(split)
         for img in img_dir:
-            ic(img)
+            print(img)
             img_files = os.listdir(f'{split}/{img}')
 
             for img_file in img_files:
